@@ -1,0 +1,8 @@
+#---download and unzip the hg38 assembly fasta file
+wget https://ftp.ensembl.org/pub/release-113/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+#---download and unzip the hg38 gtf file
+wget https://ftp.ensembl.org/pub/release-113/gtf/homo_sapiens/Homo_sapiens.GRCh38.113.gtf.gz
+gunzip Homo_sapiens.GRCh38.113.gtf.gz
+#---filter the gtf file for protein coding sequences
+cellranger mkgtf Homo_sapiens.GRCh38.113.gtf Homo_sapiens.GRCh38.113.filtered.gtf –attribute=gene_biotype:protein_coding
