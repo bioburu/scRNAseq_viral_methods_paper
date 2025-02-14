@@ -1,0 +1,12 @@
+mkdir B_cell_EBV_tmpts_exp
+cd B_cell_EBV_tmpts_exp
+conda install bioconda::sra-tools
+conda install conda-forge::pigz
+prefetch SRR31408058
+prefetch  SRR31408054
+prefetch  SRR31408050
+prefetch  SRR31408046 
+fastq-dump SRR31408058.sra --split-files
+fastq-dump SRR31408054.sra --split-files
+fastq-dump SRR31408050.sra --split-files
+fastq-dump SRR31408046.sra --split-files
