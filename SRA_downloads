@@ -3,10 +3,23 @@ cd B_cell_EBV_tmpts_exp
 conda install bioconda::sra-tools
 conda install conda-forge::pigz
 prefetch SRR31408058
-prefetch  SRR31408054
-prefetch  SRR31408050
-prefetch  SRR31408046 
+prefetch SRR31408054
+prefetch SRR31408050
+prefetch SRR31408046 
+cd SRR31408058
 fastq-dump SRR31408058.sra --split-files
+cd ..
+cd SRR31408054
 fastq-dump SRR31408054.sra --split-files
+cd ..
+cd SRR31408050
 fastq-dump SRR31408050.sra --split-files
+cd ..
+cd SRR31408046
 fastq-dump SRR31408046.sra --split-files
+cd ..
+#---in all SRA file folders rename read 1 to sample_S1_L001_R1_001.fastq 
+#---in all SRA file folders rename read 2 to sample_S1_L001_R2_001.fastq 
+#---compress all read files 
+pigz sample_S1_L001_R1_001.fastq sample_S1_L001_R2_001.fastq
+
