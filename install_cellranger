@@ -1,0 +1,8 @@
+#---download and unpack cellranger
+wget -O cellranger-9.0.1.tar.gz "https://cf.10xgenomics.com/releases/cell-exp/cellranger-9.0.1.tar.gz?Expires=1739585242&Key-Pair-Id=APKAI7S6A5RYOXBWRPDA&Signature=bqlxNcPYxhyL9OxAGzsKiS35k65MzgOtQqpwwDHHT2EdFHPND1ZUy0ToUTv22ptQqudlOA9hbBXseKAueZXgwlvH11JfeeA5IwJe5FKKZpw4n0M3XZbxAlkGOTWpCgvJyeLh1QimZiDJXSQy3tTCkBceZ7Zea7-qKWFWJB28t7q6n2Ej-69gsFPW2OqAS1sp6z9kp0b4bs1VJ9ORKs7EFGdmgWI369XjNBJcKoyUoPgMgLsht1gEelKyCC787Fwd7uSxxSCAGPVbZOXZlFa91nG1m~x4t1fT3X2FFTbUcxRafY0mnwElqjxrgQxs79JFF4niCg2iA06uT1kd774bHA__"
+tar -xzvf cellranger-9.0.1.tar.gz
+cd cellranger-9.01/bin
+pwd
+#---this will output the path to the cellranger bin folder
+#---activate cellranger for use in terminal
+export PATH=<path_to>/cellranger-9.0.1/bin:$PATH
