@@ -1,0 +1,5 @@
+#---make reference
+cellranger mkref --genome=ebv_ebv2_vir1_hg38_ref --fasta=final.fa --genes=final.gtf
+
+#---get counts
+cellranger count --id=SRR31408058_BcellEBV_d0_cts --fastqs=SRR31408058_BcellEBV_d0 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
