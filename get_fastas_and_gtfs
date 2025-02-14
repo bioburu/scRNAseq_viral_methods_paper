@@ -6,3 +6,9 @@ wget https://ftp.ensembl.org/pub/release-113/gtf/homo_sapiens/Homo_sapiens.GRCh3
 gunzip Homo_sapiens.GRCh38.113.gtf.gz
 #---filter the gtf file for protein coding sequences
 cellranger mkgtf Homo_sapiens.GRCh38.113.gtf Homo_sapiens.GRCh38.113.filtered.gtf –attribute=gene_biotype:protein_coding
+
+#---Download the Epstein Barr virus coding sequences at https://www.ncbi.nlm.nih.gov/nuccore/NC_007605.1
+#---Download the Epstein Barr type II virus coding sequences at https://www.ncbi.nlm.nih.gov/nuccore/NC_009334.1
+
+#---Retrieve all genomic NCBI Reference Sequences for viruses.
+wget https://ftp.ncbi.nlm.nih.gov/refseq/release/viral/viral.1.1.genomic.fna.gz
