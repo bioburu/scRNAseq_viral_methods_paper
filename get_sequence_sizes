@@ -1,0 +1,2 @@
+conda install bioconda::samtools
+faidx <your_fasta>.fa -i chromsizes > sizes.genome
