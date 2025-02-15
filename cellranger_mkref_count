@@ -1,5 +1,11 @@
 #---make reference for viral1.1 RefSeq fasta
 cellranger mkref --genome=viral1_ref --fasta=viral.1.1.genomic.fna --genes=viral.gtf
 
-#---get counts
+#---get viral1.1 RefSeq counts
 cellranger count --id=SRR31408046_BcellEBV_d8_viral_cts --fastqs=SRR31408046_BcellEBV_d8 --sample=sample --transcriptome=viral1_ref --create-bam true
+
+#---make reference for all finalized viral fasta files
+cellranger mkref --genome=ebv_ebv2_HERVK113_SV40_StxPhage_hg38_ref --fasta=finalized.fa --genes=finalized.gtf
+
+#---get count files from all experimental timepoints in B-cell EBV fastq files
+cellranger count --id=SRR31408058_BcellEBV_d0_finalized_cts --fastqs=SRR31408058_BcellEBV_d0 --sample=sample --transcriptome=ebv_ebv2_HERVK113_SV40_StxPhage_hg38_ref --create-bam true
