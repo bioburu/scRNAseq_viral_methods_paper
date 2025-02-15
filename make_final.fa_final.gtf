@@ -1,2 +1,1 @@
-cat ebv.fa ebv2.fa viral.1.1.genomic.fna Homo_sapiens.GRCh38.dna.primary_assembly.fa > final.fa
-cat ebv.gtf ebv2.gtf viral.gtf Homo_sapiens.GRCh38.113.filtered.gtf > final.gtf
+
