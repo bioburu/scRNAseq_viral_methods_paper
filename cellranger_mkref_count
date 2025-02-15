@@ -1,8 +1,4 @@
-#---make reference
-cellranger mkref --genome=ebv_ebv2_vir1_hg38_ref --fasta=final.fa --genes=final.gtf
+#---make reference for viral1.1 RefSeq fasta
+cellranger mkref --genome=viral1_ref --fasta=viral.1.1.genomic.fna --genes=viral.gtf
 
 #---get counts
-cellranger count --id=SRR31408058_BcellEBV_d0_cts --fastqs=SRR31408058_BcellEBV_d0 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
-cellranger count --id=SRR31408054_BcellEBV_d2_cts --fastqs=SRR31408054_BcellEBV_d2 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
-cellranger count --id=SRR31408050_BcellEBV_d5_cts --fastqs=SRR31408050_BcellEBV_d5 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
-cellranger count --id=SRR31408046_BcellEBV_d8_cts --fastqs=SRR31408046_BcellEBV_d8 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
