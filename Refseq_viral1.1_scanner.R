@@ -46,7 +46,8 @@ DoHeatmap(data,
           features = c(genes))
 #---Scan viral sequences in chunks of 10 for BLAST validations
 #---for candidate viral sequences, use the samtools toolkit to view 
-#---sequences by RefSeq id numbers
+#---sequences by RefSeq id numbers. ex. samtools view possorted_genome_bam.bam 'NC_022518.1' | head -n 10
+
 VlnPlot(data,
         features = c(genes[1:10]),
         layer='counts',
