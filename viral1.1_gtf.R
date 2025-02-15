@@ -13,6 +13,7 @@ duplicated(contig_names)
 #---use Refseq ids as names 
 names<-contig_names
 names
+names <- sub("_", "-", names)
 #---attach identifier to names
 names<-paste0(names, "-viral")
 names
