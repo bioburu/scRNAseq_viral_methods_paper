@@ -1,3 +1,15 @@
+#---install required packages
+remotes::install_github("satijalab/seurat", "seurat5", quiet = TRUE)
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.20")
+install.packages("tidyverse")
+install.packages("ggridges")
+BiocManager::install("biomaRt")
+BiocManager::install("celldex")
+BiocManager::install("org.Hs.eg.db")
+BiocManager::install("SingleR")
+BiocManager::install("SingleCellExperiment")
 #---set up packages
 library(Seurat)
 library(tidyverse)
