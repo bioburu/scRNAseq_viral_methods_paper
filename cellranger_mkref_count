@@ -4,4 +4,5 @@ cellranger mkref --genome=ebv_ebv2_vir1_hg38_ref --fasta=final.fa --genes=final.
 #---get counts
 cellranger count --id=SRR31408058_BcellEBV_d0_cts --fastqs=SRR31408058_BcellEBV_d0 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
 cellranger count --id=SRR31408054_BcellEBV_d2_cts --fastqs=SRR31408054_BcellEBV_d2 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
+cellranger count --id=SRR31408050_BcellEBV_d5_cts --fastqs=SRR31408050_BcellEBV_d5 --sample=sample --transcriptome=ebv_ebv2_vir1_hg38_ref --create-bam true
 
