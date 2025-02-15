@@ -1,0 +1,6 @@
+#---in B_cell_EBV_tmpts_exp directory
+cd fasta
+cat ebv.fa ebv2.fa NC_022518.1_HERVK113.fa NC_001669.1_SV40.fa NC_049922.1_StxPhage.fa Homo_sapiens.GRCh38.dna.primary_assembly.fa > finalized.fa
+cd ..
+cd gtf
+cat ebv.gtf ebv2.gtf NC_022518.1_HERVK113.gtf NC_001669.1_SV40.gtf NC_049922.1_StxPhage.gtf Homo_sapiens.GRCh38.113.filtered.gtf > finalized.gtf
