@@ -66,4 +66,6 @@ head(final)
 write.table(data.frame(final),'<path_to>/B_cell_EBV_tmpts_exp/ebv2.gtf',
             sep="\t",
             row.names=FALSE,
-            quote = FALSE)
+            quote = FALSE,
+            col.names = FALSE)
+
