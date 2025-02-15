@@ -2,7 +2,7 @@ library(tidyr)
 library(tidyverse)
 library(dplyr)
 #---read in fasta file
-file<-read.delim('/home/em/Downloads/B_cell_EBV_tmpts_exp/NC_049922.1_StxPhage.fa',
+file<-read.delim('<path_to>/B_cell_EBV_tmpts_exp/NC_049922.1_StxPhage.fa',
                  header = FALSE,sep = ' ')
 #---retrieve sequence ids
 selected_rows <- file[grep(">", file$V1), ]
@@ -15,9 +15,9 @@ name<-paste0(name, "-stxPhage")
 name <- sub("_", "-", name)
 name
 #---write gene names to csv file
-write.csv(name,file='/home/em/Downloads/B_cell_EBV_tmpts_exp/stxPhage_sequence.csv')
+write.csv(name,file='<path_to>/B_cell_EBV_tmpts_exp/stxPhage_sequence.csv')
 #---read in CDS sequence sizes
-file2<-read.delim('/home/em/Downloads/B_cell_EBV_tmpts_exp/sizes.genome',
+file2<-read.delim('<path_to>/B_cell_EBV_tmpts_exp/sizes.genome',
                   header = FALSE)
 #---make gtf file
 gene_sizes<-file2$V2
@@ -46,7 +46,7 @@ final<-cbind(contig_names,
 #---view finalized gtf
 final<-data.frame(final)
 head(final)
-write.table(data.frame(final),'/home/em/Downloads/B_cell_EBV_tmpts_exp/NC_049922.1_StxPhage.gtf',
+write.table(data.frame(final),'<path_to>/B_cell_EBV_tmpts_exp/NC_049922.1_StxPhage.gtf',
             sep="\t",
             row.names=FALSE,
             quote = FALSE,
