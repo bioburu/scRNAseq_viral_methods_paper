@@ -2,7 +2,7 @@ library(tidyr)
 library(tidyverse)
 library(dplyr)
 #---read in fasta file
-file<-read.delim('<path_to>/B_cell_EBV_tmpts_exp/viral.1.1.genomic.fna',
+file<-read.delim('/home/em/Downloads/B_cell_EBV_tmpts_exp/viral.1.1.genomic.fna',
                  header = FALSE,sep = ' ')
 #---retrieve sequence ids
 selected_rows <- file[grep(">", file$V1), ]
@@ -18,9 +18,9 @@ names <- sub("_", "-", names)
 names<-paste0(names, "-viral")
 names
 #---write names to csv file
-write.csv(names,file='<path_to>/B_cell_EBV_tmpts_exp/virus_sequences.csv')
+write.csv(names,file='/home/em/Downloads/B_cell_EBV_tmpts_exp/viral_sequences.csv')
 #---read in sequence sizes
-file2<-read.delim('<path_to>/B_cell_EBV_tmpts_exp/sizes.genome',
+file2<-read.delim('/home/em/Downloads/B_cell_EBV_tmpts_exp/sizes.genome',
                   header = FALSE)
 #---make gtf file
 gene_sizes<-file2$V2
@@ -49,7 +49,9 @@ final<-cbind(contig_names,
 #---view finalized gtf
 final<-data.frame(final)
 head(final)
-write.table(data.frame(final),'<path_to>/B_cell_EBV_tmpts_exp/viral.gtf',
+write.table(data.frame(final),'/home/em/Downloads/B_cell_EBV_tmpts_exp/viral.gtf',
             sep="\t",
             row.names=FALSE,
-            quote = FALSE)
+            quote = FALSE,
+            col.names = FALSE)
+
