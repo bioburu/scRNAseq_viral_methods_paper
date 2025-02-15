@@ -1,4 +1,5 @@
 #---make reference for viral1.1 RefSeq fasta
 cellranger mkref --genome=viral1_ref --fasta=viral.1.1.genomic.fna --genes=viral.gtf
+cellranger count --id=SRR31408046_BcellEBV_d8_viral_cts --fastqs=SRR31408046_BcellEBV_d8 --sample=sample --transcriptome=viral1_ref --create-bam true
 
 #---get counts
