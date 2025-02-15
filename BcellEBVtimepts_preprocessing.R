@@ -9,7 +9,7 @@ library(celldex)
 library(org.Hs.eg.db)
 library(SingleR)
 #---enter all count files and make into Seurat objects 
-setwd('/home/em/Downloads/B_cell_EBV_tmpts_exp/SRR31408058_BcellEBV_d0_cts/outs/filtered_feature_bc_matrix')
+setwd('<path_to>/B_cell_EBV_tmpts_exp/SRR31408058_BcellEBV_d0_cts/outs/filtered_feature_bc_matrix')
 barcodes_path <- 'barcodes.tsv.gz'
 features_path <- 'features.tsv.gz'
 matrix_path <- 'matrix.mtx.gz'
@@ -18,7 +18,7 @@ data <- CreateSeuratObject(counts=matrix,
                            min.cells=1,
                            min.features=1,
                            project = 'day0')
-setwd('/home/em/Downloads/B_cell_EBV_tmpts_exp/SRR31408054_BcellEBV_d2_cts/outs/filtered_feature_bc_matrix')
+setwd('<path_to>/B_cell_EBV_tmpts_exp/SRR31408054_BcellEBV_d2_cts/outs/filtered_feature_bc_matrix')
 barcodes_path <- 'barcodes.tsv.gz'
 features_path <- 'features.tsv.gz'
 matrix_path <- 'matrix.mtx.gz'
@@ -27,7 +27,7 @@ data2 <- CreateSeuratObject(counts=matrix,
                            min.cells=1,
                            min.features=1,
                            project = 'day2')
-setwd('/home/em/Downloads/B_cell_EBV_tmpts_exp/SRR31408050_BcellEBV_d5_cts/outs/filtered_feature_bc_matrix')
+setwd('<path_to>/B_cell_EBV_tmpts_exp/SRR31408050_BcellEBV_d5_cts/outs/filtered_feature_bc_matrix')
 barcodes_path <- 'barcodes.tsv.gz'
 features_path <- 'features.tsv.gz'
 matrix_path <- 'matrix.mtx.gz'
@@ -36,7 +36,7 @@ data3 <- CreateSeuratObject(counts=matrix,
                             min.cells=1,
                             min.features=1,
                             project = 'day5')
-setwd('/home/em/Downloads/B_cell_EBV_tmpts_exp/SRR31408046_BcellEBV_d8_cts/outs/filtered_feature_bc_matrix')
+setwd('<path_to>/B_cell_EBV_tmpts_exp/SRR31408046_BcellEBV_d8_cts/outs/filtered_feature_bc_matrix')
 barcodes_path <- 'barcodes.tsv.gz'
 features_path <- 'features.tsv.gz'
 matrix_path <- 'matrix.mtx.gz'
@@ -141,4 +141,4 @@ p2<-DimPlot(data,
 p1+p2
 #---write Seurat object to rda file 
 SaveSeuratRds(data,
-              file='/home/em/Downloads/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
+              file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
