@@ -12,7 +12,7 @@ library(ReactomePA)
 library(DOSE)
 library(clusterProfiler)
 #---read in rda file
-data<-readRDS(file='/home/em/Downloads/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
 cat('GSE282400: Sp140L Is a Herpesvirus Restriction Factor [scRNA-seq]')
 cat('Herpesviruses, including the oncogenic Epstein-Barr Virus (EBV), must bypass host DNA sensing mechanisms to drive infection and pathogenesis. The first viral latency protein expressed, EBNA-LP, is essential for the transformation of naïve B cells, yet its role in evading host defenses remains unclear. Using single-cell RNA sequencing of EBNA-LP-Knockout (LPKO)-infected B cells, we reveal an antiviral response landscape implicating the ‘speckled proteins’ as key restriction factors countered by EBNA-LP. Specifically, loss of SP100 or the primate-specific SP140L reverses the restriction of LPKO, suppresses a subset of canonically interferon-stimulated genes, and restores viral gene transcription and cellular proliferation. Notably, we also identify Sp140L as a restriction target of the herpesvirus saimiri ORF3 protein, implying a role in immunity to other DNA viruses. This study reveals Sp140L as a restriction factor that we propose links sensing and transcriptional suppression of viral DNA to an IFN-independent innate immune response, likely relevant to all nuclear DNA viruses.')
 cat('Public on Nov 20, 2024')
@@ -20,7 +20,7 @@ cat('Cable JM, Wongwiwat W, Grabowski JC, White RE et al. Sp140L Is a Novel Herp
 cat('Duke University. Molecular Genetics and Microbiology')
 cat('Experimental design: Single cell RNAseq data from B cells in a timecourse of LPKO or WT EBV infection. Samples including uninfected (Day 0), and 2, 5, and 8 days post-infection.')
 #---get EBV type I CDS sequences
-ebv<-read.csv('/home/em/Downloads/B_cell_EBV_tmpts_exp/genes/ebv_genes.csv')
+ebv<-read.csv('<path_to>/B_cell_EBV_tmpts_exp/genes/ebv_genes.csv')
 ebv<-ebv$x
 ebv<-FetchData(data,vars = c('ident',ebv),layer = 'counts')
 ebv<-colnames(ebv)[-1]
@@ -28,22 +28,22 @@ cat('All ebv sequence reads detected')
 ebv
 data <- SetIdent(data, value = "orig.ident")
 #---get EBV type II CDS sequences
-ebv2<-read.csv('/home/em/Downloads/B_cell_EBV_tmpts_exp/genes/ebv2_genes.csv')
+ebv2<-read.csv('<path_to>/B_cell_EBV_tmpts_exp/genes/ebv2_genes.csv')
 ebv2<-ebv2$x
 ebv2<-FetchData(data,vars = c('ident',ebv2),layer = 'counts')
 ebv2<-colnames(ebv2)[-1]
 cat('All ebv2 sequence reads detected')
 ebv2
 #---get HERVK113 genome sequence
-hervK113<-read.csv('/home/em/Downloads/B_cell_EBV_tmpts_exp/genes/HERVK113_sequence.csv')
+hervK113<-read.csv('<path_to>/B_cell_EBV_tmpts_exp/genes/HERVK113_sequence.csv')
 hervK113<-hervK113$x
 hervK113
 #---get SV40 genome sequence
-sv40<-read.csv('/home/em/Downloads/B_cell_EBV_tmpts_exp/genes/SV40_sequence.csv')
+sv40<-read.csv('<path_to>/B_cell_EBV_tmpts_exp/genes/SV40_sequence.csv')
 sv40<-sv40$x
 sv40
 #---get stxPhage genome sequence
-stxPhage<-read.csv('/home/em/Downloads/B_cell_EBV_tmpts_exp/genes/stxPhage_sequence.csv')
+stxPhage<-read.csv('<path_to>/B_cell_EBV_tmpts_exp/genes/stxPhage_sequence.csv')
 stxPhage<-stxPhage$x
 stxPhage
 DoHeatmap(data,
@@ -239,7 +239,7 @@ VlnPlot(data_subset,
 cat('Epstein-Barr virus (EBV) nuclear antigen leader protein (EBNA-LP) plays a critical role in transformation of primary B lymphocytes to continuously proliferating lymphoblastoid cell lines (LCLs).
 Reference: Kanamori M, Watanabe S, Honma R, Kuroda M, Imai S, Takada K, Yamamoto N, Nishiyama Y, Kawaguchi Y. Epstein-Barr virus nuclear antigen leader protein induces expression of thymus- and activation-regulated chemokine in B cells. J Virol. 2004 Apr;78(8):3984-93. doi: 10.1128/jvi.78.8.3984-3993.2004. PMID: 15047814; PMCID: PMC374277.')
 #-------------------------------------------------------------------------------
-data<-readRDS(file='/home/em/Downloads/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
 data <- SetIdent(data, value = "orig.ident")
 cat('Simian virus 40 complete genome')
 cat('SV40 is a potent DNA tumor virus that induces tumors in rodents and transforms many types of cells in culture, including those of human origin.
@@ -419,7 +419,7 @@ VlnPlot(data_subset,
         pt.size=3,
         group.by = 'viral.groups')+ ggtitle('EBNA-LP-ebv Type I in SV40 infected cells')
 #---------------------------------------------------------------------
-data<-readRDS(file='/home/em/Downloads/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
 data <- SetIdent(data, value = "orig.ident")
 cat('Stx converting phage vB_EcoS_ST2-8624, complete genome')
 cat('Viruses; Duplodnaviria; Heunggongvirae; Uroviricota;
