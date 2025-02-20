@@ -38,7 +38,8 @@ VlnPlot(infected_cells,
 genome (NC-022518.1) logNormalized counts')+NoLegend()
 FindMarkers(infected_cells,
             features=c('NC-022518.1'),
-            ident.1 = 'glioma_tumor')
+            ident.1 = 'glioma_tumor',
+           test.use='bimod')
 #---Figure 2b
 VlnPlot(infected_cells,
         features = c('NC-022518.1'),
