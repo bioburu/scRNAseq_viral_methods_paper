@@ -12,7 +12,7 @@ library(htmlwidgets)
 library(ReactomePA)
 library(DOSE)
 library(clusterProfiler)
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
 cat('GSE282400: Sp140L Is a Herpesvirus Restriction Factor [scRNA-seq]')
 cat('Herpesviruses, including the oncogenic Epstein-Barr Virus (EBV), must bypass host DNA sensing mechanisms to drive infection and pathogenesis. The first viral latency protein expressed, EBNA-LP, is essential for the transformation of naïve B cells, yet its role in evading host defenses remains unclear. Using single-cell RNA sequencing of EBNA-LP-Knockout (LPKO)-infected B cells, we reveal an antiviral response landscape implicating the ‘speckled proteins’ as key restriction factors countered by EBNA-LP. Specifically, loss of SP100 or the primate-specific SP140L reverses the restriction of LPKO, suppresses a subset of canonically interferon-stimulated genes, and restores viral gene transcription and cellular proliferation. Notably, we also identify Sp140L as a restriction target of the herpesvirus saimiri ORF3 protein, implying a role in immunity to other DNA viruses. This study reveals Sp140L as a restriction factor that we propose links sensing and transcriptional suppression of viral DNA to an IFN-independent innate immune response, likely relevant to all nuclear DNA viruses.')
 cat('Public on Nov 20, 2024')
@@ -128,7 +128,7 @@ negative- cells. Count axis indicates
 number of genes',
         label_format=50)
 #-------------------------------------------------------------------------------
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Simian virus 40 complete genome')
 cat('SV40 is a potent DNA tumor virus that induces tumors in rodents and transforms many types of cells in culture, including those of human origin.
@@ -195,7 +195,7 @@ positive comparison to negative- cells.
 Count axis indicates number of genes.',
         label_format=50)
 #---------------------------------------------------------------------
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rda')
+data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Stx converting phage vB_EcoS_ST2-8624, complete genome')
 cat('Viruses; Duplodnaviria; Heunggongvirae; Uroviricota;
