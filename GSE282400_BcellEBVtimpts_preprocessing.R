@@ -141,4 +141,4 @@ p2<-DimPlot(data,
 p1+p2
 #---write Seurat object to rda file 
 SaveSeuratRds(data,
-              file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rda')
+              file='<path_to>/B_cell_EBV_tmpts_exp/GSE282400_BcellEBV_viralpanel.rds')
