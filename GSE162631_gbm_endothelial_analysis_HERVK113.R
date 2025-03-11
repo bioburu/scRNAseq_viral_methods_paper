@@ -12,7 +12,7 @@ library(htmlwidgets)
 library(ReactomePA)
 library(DOSE)
 library(clusterProfiler)
-data<-readRDS(file='GBM_R1-4.VIR.rda')
+data<-readRDS(file='GBM_R1-4.VIR.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Human endogenous retrovirus K113 complete genome')
 data <- RenameIdents(data,
