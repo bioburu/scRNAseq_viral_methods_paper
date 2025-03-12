@@ -12,7 +12,7 @@ library(htmlwidgets)
 library(ReactomePA)
 library(DOSE)
 library(clusterProfiler)
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
+data<-readRDS(file='GSE282400_BcellEBV_viralpanel.rds')
 cat('GSE282400: Sp140L Is a Herpesvirus Restriction Factor [scRNA-seq]')
 cat('Herpesviruses, including the oncogenic Epstein-Barr Virus (EBV), must bypass host DNA sensing mechanisms to drive infection and pathogenesis. The first viral latency protein expressed, EBNA-LP, is essential for the transformation of naïve B cells, yet its role in evading host defenses remains unclear. Using single-cell RNA sequencing of EBNA-LP-Knockout (LPKO)-infected B cells, we reveal an antiviral response landscape implicating the ‘speckled proteins’ as key restriction factors countered by EBNA-LP. Specifically, loss of SP100 or the primate-specific SP140L reverses the restriction of LPKO, suppresses a subset of canonically interferon-stimulated genes, and restores viral gene transcription and cellular proliferation. Notably, we also identify Sp140L as a restriction target of the herpesvirus saimiri ORF3 protein, implying a role in immunity to other DNA viruses. This study reveals Sp140L as a restriction factor that we propose links sensing and transcriptional suppression of viral DNA to an IFN-independent innate immune response, likely relevant to all nuclear DNA viruses.')
 cat('Public on Nov 20, 2024')
@@ -20,29 +20,29 @@ cat('Cable JM, Wongwiwat W, Grabowski JC, White RE et al. Sp140L Is a Novel Herp
 cat('Duke University. Molecular Genetics and Microbiology')
 cat('Experimental design: Single cell RNAseq data from B cells in a timecourse of LPKO or WT EBV infection. Samples including uninfected (Day 0), and 2, 5, and 8 days post-infection.')
 
-ebv1<-read.csv('<path_to>/B_cell_EBV_tmpts_methods/genes/ebv_genes.csv')
+ebv1<-read.csv('ebv_genes.csv')
 ebv1<-ebv1$x
 ebv1<-FetchData(data,vars = c('ident',ebv1),layer = 'counts')
 ebv1<-colnames(ebv1)[-1]
 cat('All viral sequence reads detected')
 ebv1
 
-ebv2<-read.csv('<path_to>/B_cell_EBV_tmpts_methods/genes/ebv2_genes.csv')
+ebv2<-read.csv('ebv2_genes.csv')
 ebv2<-ebv2$x
 ebv2<-FetchData(data,vars = c('ident',ebv2),layer = 'counts')
 ebv2<-colnames(ebv2)[-1]
 cat('All viral sequence reads detected')
 ebv2
 
-hervk113<-read.csv('<path_to>/B_cell_EBV_tmpts_methods/genes/HERVK113_sequence.csv')
+hervk113<-read.csv('HERVK113_sequence.csv')
 hervk113<-hervk113$x
 hervk113
 
-sv40<-read.csv('<path_to>/B_cell_EBV_tmpts_methods/genes/SV40_sequence.csv')
+sv40<-read.csv('SV40_sequence.csv')
 sv40<-sv40$x
 sv40
 
-stxPhagevB<-read.csv('<path_to>/B_cell_EBV_tmpts_methods/genes/stxPhage_sequence.csv')
+stxPhagevB<-read.csv('stxPhage_sequence.csv')
 stxPhagevB<-stxPhagevB$x
 stxPhagevB
 data <- SetIdent(data, value = "orig.ident")
@@ -128,7 +128,7 @@ negative- cells. Count axis indicates
 number of genes',
         label_format=50)
 #-------------------------------------------------------------------------------
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
+data<-readRDS(file='GSE282400_BcellEBV_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Simian virus 40 complete genome')
 cat('SV40 is a potent DNA tumor virus that induces tumors in rodents and transforms many types of cells in culture, including those of human origin.
@@ -195,7 +195,7 @@ positive comparison to negative- cells.
 Count axis indicates number of genes.',
         label_format=50)
 #---------------------------------------------------------------------
-data<-readRDS(file='<path_to>/B_cell_EBV_tmpts_methods/GSE282400_BcellEBV_viralpanel.rds')
+data<-readRDS(file='GSE282400_BcellEBV_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Stx converting phage vB_EcoS_ST2-8624, complete genome')
 cat('Viruses; Duplodnaviria; Heunggongvirae; Uroviricota;
@@ -260,3 +260,4 @@ dotplot(go,
 vB_EcoS_ST2-8624 Infected v non-infected genes',
         showCategory=6,
         label_format=50)
+
