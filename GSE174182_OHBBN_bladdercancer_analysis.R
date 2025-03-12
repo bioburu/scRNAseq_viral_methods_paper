@@ -79,7 +79,7 @@ virus+ cells. Upregulated genes comparing
 OH-BBN treated and untreated. Count
 indicate number of genes')
 #-------------------------------------------------------------------------------
-data<-readRDS(file='GSE174182_BladderCancer_viralpanel.rda')
+data<-readRDS(file='GSE174182_BladderCancer_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Murine type C retrovirus, complete genome')
 cat('Isolate only virally infected cells')
@@ -136,7 +136,7 @@ OH-BBN treatments and untreated controls,
 Counts indicate number of genes.',
         label_format=50)
 #---------------------------------------------------------------------
-data<-readRDS(file='GSE174182_BladderCancer_viralpanel.rda')
+data<-readRDS(file='GSE174182_BladderCancer_viralpanel.rds')
 data <- SetIdent(data, value = "orig.ident")
 cat('Mouse mammary tumor virus, complete genome')
 table(Idents(data))
@@ -231,5 +231,7 @@ dotplot(go,
         title='GO:Biological Process:Mouse mammary
 tumor virus+ compared to -negative cells.  
 Count indicates number of genes',
-        showCategory=6,
+        showCategory=12,
         label_format=50)
+
+
